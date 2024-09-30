@@ -106,3 +106,140 @@ Here are some **Spring Boot annotations interview questions** to help you prepar
    - **Follow-up Question**: How can you handle exceptions globally in a Spring Boot application?
 
 These questions should help you cover the most common Spring Boot annotations in an interview setting! Let me know if you'd like more details on any of these topics.
+
+
+Here are **some more Spring Boot annotations** that are commonly used, along with their explanations:
+
+### 1. **`@SpringBootTest`**
+   - **Purpose**: 
+     - It is used for writing integration tests in Spring Boot. It boots up the entire Spring Boot application context to simulate real-life scenarios.
+   - **Use case**: 
+     - Useful for testing the whole application end-to-end with real components, like repositories and services.
+   
+   - **Follow-up Question**: How can you mock beans in a test annotated with `@SpringBootTest`?
+
+### 2. **`@TestConfiguration`**
+   - **Purpose**: 
+     - It is used to define additional `@Configuration` classes that will be used only in test scenarios.
+   - **Use case**: 
+     - Helpful when you need a specific configuration or bean only for testing purposes.
+
+   - **Follow-up Question**: How does `@TestConfiguration` differ from `@Configuration`?
+
+### 3. **`@ConditionalOnProperty`**
+   - **Purpose**: 
+     - It is used to conditionally enable or disable a Spring component (e.g., a bean or configuration) based on the presence and value of a specific property in the `application.properties` or `application.yml` file.
+   - **Use case**: 
+     - Useful for creating feature toggles in the application based on properties.
+
+   - **Follow-up Question**: How would you use `@ConditionalOnProperty` to enable a bean only in a specific environment?
+
+### 4. **`@ConditionalOnMissingBean`**
+   - **Purpose**: 
+     - It is used to define a bean only if the specified bean is not already defined in the Spring context.
+   - **Use case**: 
+     - Allows you to create a fallback or default implementation if another bean has not been provided.
+
+   - **Follow-up Question**: When is it appropriate to use `@ConditionalOnMissingBean` in an application?
+
+### 5. **`@EnableAutoConfiguration`**
+   - **Purpose**: 
+     - It tells Spring Boot to automatically configure beans based on the classpath settings, other beans, and property configurations.
+   - **Use case**: 
+     - It’s generally used internally by `@SpringBootApplication`, but can be explicitly used when custom auto-configuration is required.
+   
+   - **Follow-up Question**: How can you exclude specific auto-configurations using `@EnableAutoConfiguration`?
+
+### 6. **`@PathVariable`**
+   - **Purpose**: 
+     - It is used to extract values from the URI template and bind them to method parameters in controller methods.
+   - **Use case**: 
+     - Typically used in RESTful web services to capture dynamic parts of the URL, such as IDs.
+   
+   - **Follow-up Question**: How does `@PathVariable` differ from `@RequestParam`?
+
+### 7. **`@RequestParam`**
+   - **Purpose**: 
+     - It is used to extract query parameters from a URL and bind them to method parameters in controller methods.
+   - **Use case**: 
+     - Commonly used to handle query parameters in GET requests.
+   
+   - **Follow-up Question**: How can you make a `@RequestParam` optional?
+
+### 8. **`@ResponseStatus`**
+   - **Purpose**: 
+     - It is used to specify the HTTP status code that should be returned from a controller method.
+   - **Use case**: 
+     - Useful for returning custom status codes in RESTful services, such as returning `201 Created` when a new resource is created.
+   
+   - **Follow-up Question**: How can `@ResponseStatus` be used to handle exceptions?
+
+### 9. **`@EnableAsync`**
+   - **Purpose**: 
+     - It is used to enable asynchronous method execution in Spring by processing methods annotated with `@Async`.
+   - **Use case**: 
+     - Useful when you need to run tasks asynchronously without blocking the main thread.
+   
+   - **Follow-up Question**: How do you implement asynchronous methods in Spring Boot?
+
+### 10. **`@Async`**
+   - **Purpose**: 
+     - It is used to mark a method for asynchronous execution.
+   - **Use case**: 
+     - You can use it to perform background processing, such as sending emails or making non-blocking I/O calls.
+   
+   - **Follow-up Question**: How does Spring handle `@Async` internally?
+
+### 11. **`@Profile`**
+   - **Purpose**: 
+     - It is used to conditionally activate certain beans or configurations based on the active Spring profile (e.g., dev, test, prod).
+   - **Use case**: 
+     - You can define beans that should only be active in a certain environment.
+   
+   - **Follow-up Question**: How can you define multiple profiles for a bean using `@Profile`?
+
+### 12. **`@SessionAttributes`**
+   - **Purpose**: 
+     - It is used to store model attributes in the session between multiple requests.
+   - **Use case**: 
+     - Commonly used in web applications where you want to persist some data across different requests in the same user session.
+   
+   - **Follow-up Question**: How does `@SessionAttributes` work with the Spring MVC model?
+
+### 13. **`@ModelAttribute`**
+   - **Purpose**: 
+     - It is used to bind a method parameter or method return value to a model, making it available in a Spring MVC view.
+   - **Use case**: 
+     - Commonly used in form processing to initialize form backing objects.
+   
+   - **Follow-up Question**: How does `@ModelAttribute` differ from `@RequestBody`?
+
+### 14. **`@RequestBody`**
+   - **Purpose**: 
+     - It is used to bind the HTTP request body to a method parameter in a controller.
+   - **Use case**: 
+     - It is commonly used in RESTful services to pass JSON or XML data in POST or PUT requests.
+   
+   - **Follow-up Question**: How can you validate a `@RequestBody` object?
+
+### 15. **`@EnableJpaRepositories`**
+   - **Purpose**: 
+     - It is used to enable JPA repositories in a Spring Boot application.
+   - **Use case**: 
+     - This annotation tells Spring to scan the packages for interfaces that extend `JpaRepository` and create implementations for them automatically.
+
+   - **Follow-up Question**: How can you customize the base repository scan using `@EnableJpaRepositories`?
+
+### 16. **`@EntityScan`**
+   - **Purpose**: 
+     - It is used to specify the packages to scan for JPA entities in a Spring Boot application.
+   - **Use case**: 
+     - Useful when your entities are in a different package than the Spring Boot main application class.
+
+   - **Follow-up Question**: Can you define multiple base packages for scanning with `@EntityScan`?
+
+---
+
+These annotations are critical for managing and configuring different aspects of a Spring Boot application. If you need deeper explanations on any specific annotations or more examples, feel free to ask!
+
+
